@@ -19,31 +19,43 @@ const components = {
   Head,
 };
 
+
 export default function PostPage({
   posts,
   globalData,
 }) {
   return (
+
+
     <Layout>
       <SEO
         title={`${posts.title} - ${globalData.name}`}
         description={posts.description}
+
       />
       <Header name={globalData.name} />
       <article className="px-6 md:px-0">
-        <header>
-          <h1 className="text-3xl md:text-5xl dark:text-white text-center mb-12">
-            {posts?.title}
-          </h1>
-          {posts?.description && (
-            <p className="text-xl mb-4">{posts?.description}</p>
-          )}
-        </header>
-        <main>
-          <article className="prose dark:prose-dark">
-            {posts.body}
-          </article>
-        </main>
+
+        {posts.map((item) => (
+          <>
+            <header>
+
+              <h1 className="text-3xl md:text-5xl dark:text-white text-center mb-12">
+                {item?.title}
+              </h1>
+              {item?.description && (
+
+                <p className="text-xl mb-4">{item?.description}</p>
+              )}
+            </header>
+            <main>
+              <article className="prose dark:prose-dark">
+                {item.body}
+              </article>
+            </main>
+          </>
+        ))}
+
       </article>
       <Footer copyrightText={globalData.footerText} />
       <GradientBackground
@@ -61,7 +73,7 @@ export default function PostPage({
 export const getServerSideProps = async ({ params }) => {
   const globalData = getGlobalData();
   const posts = await getPostBySlug(params.id);
- 
+
 
   return {
     props: {
