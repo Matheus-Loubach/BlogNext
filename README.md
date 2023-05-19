@@ -1,6 +1,6 @@
 # Blog NextJS
 
-## Este é um projeto de blog desenvolvido usando Next.js, Tailwind CSS e Supabase. O blog permite que os usuários visualizem os artigos existentes. Supabase é utilizado como o backend do aplicativo para armazenar e recuperar os dados dos artigos.(Criado como desafio do Curso De React/NextJS na Digital innovation one)
+### Este é um projeto de blog desenvolvido usando Next.js, Tailwind CSS e Supabase. O blog permite que os usuários visualizem os artigos existentes. Supabase é utilizado como o backend do aplicativo para armazenar e recuperar os dados dos artigos.(Criado como desafio do Curso De React/NextJS na Digital innovation one)
 
 - Exibição de lista de artigos
 - Exibição de um artigo individual
